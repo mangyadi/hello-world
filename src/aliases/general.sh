@@ -58,8 +58,8 @@ alias timer='echo "Timer started. Ctrl-D to stop." && date && time cat && date'
 # --- Text ---
 alias less='less -R'
 alias more='less'
-alias head='head -n 20'
-alias tail='tail -n 20'
+alias h20='head -n 20'
+alias t20='tail -n 20'
 alias tailf='tail -f'
 alias count='wc -l'
 
