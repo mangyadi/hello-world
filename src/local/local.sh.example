@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# local.sh — Machine-specific overrides
+# ==============================================================================
+# Copy this to local.sh and customize for your machine.
+# This file is loaded LAST and can override any setting.
+# Do NOT commit this file to version control.
+# ==============================================================================
+
+# --- Override Settings ---
+# export BASHCFG_PROMPT_THEME="minimal"
+# export BASHCFG_PROMPT_SHOW_TIME=1
+# export BASHCFG_PROMPT_SHOW_HOSTNAME=1
+# export BASHCFG_LOG_LEVEL=0  # DEBUG
+
+# --- Machine-Specific Aliases ---
+# alias myserver='ssh user@myserver.com'
+
+# --- Custom PATH entries ---
+# _path_prepend "/opt/custom/bin"
+
+# --- API Keys (never commit these!) ---
+# export OPENAI_API_KEY="sk-..."
+
+# --- Workspace Configuration ---
+# export BASHCFG_PROJECTS_DIR="$HOME/code"
