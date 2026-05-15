@@ -55,6 +55,9 @@ _prompt_command_powerline() {
                 ref:*) branch="${head#ref: refs/heads/}" ;;
                 *)     branch="${head:0:7}" ;;
             esac
+        elif [[ $BASHCFG_HAS_GIT -eq 1 ]]; then
+            branch=$(git symbolic-ref --short HEAD 2>/dev/null || \
+                     git rev-parse --short HEAD 2>/dev/null)
         fi
         if [[ -n "$branch" ]]; then
             ps1+="${seg_git_bg}${seg_git_fg} ⎇ ${branch} ${reset}"

@@ -69,7 +69,7 @@ alias h='history'
 alias j='jobs -l'
 alias which='type -a'
 alias map='xargs -n1'
-alias please='sudo !!'
+please() { sudo "$(fc -ln -1)"; }
 alias ':q'='exit'
 alias 'q'='exit'
 

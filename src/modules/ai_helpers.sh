@@ -209,7 +209,7 @@ ai_prompt_load() {
     local file="${prompts_dir}/${name}.md"
     if [[ -f "$file" ]]; then
         cat "$file"
-        echo "$file" | _clip 2>/dev/null
+        cat "$file" | _clip 2>/dev/null
     else
         _print_error "Prompt not found: $name"
     fi
@@ -237,7 +237,7 @@ ai_ask() {
         -d "$(cat << EOF
 {
     "model": "$model",
-    "messages": [{"role": "user", "content": $(echo "$prompt" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))' 2>/dev/null || echo "\"$prompt\"")}],
+    "messages": [{"role": "user", "content": $(echo "$prompt" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))' 2>/dev/null || jq -n --arg p "$prompt" '$p' 2>/dev/null || echo "$prompt" | sed 's/\\/\\\\/g; s/"/\\"/g; s/\t/\\t/g' | { read -r l; echo "\"$l\""; })}],
     "max_tokens": 2000
 }
 EOF
