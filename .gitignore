@@ -1,0 +1,22 @@
+# Local overrides (machine-specific, may contain secrets)
+src/local/local.sh
+
+# Runtime data
+src/cache/
+src/logs/
+src/tmp/
+src/data/bookmarks
+src/data/projects.list
+src/data/sessions/
+src/data/prompts/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/settings.json
+.idea/
